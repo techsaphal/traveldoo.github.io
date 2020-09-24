@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Traveldoo | Travel with Fun!</title>
+    <style>
+        #nav a{
+            color: chocolate;
+            font-weight: bolder;
+            text-decoration: none;
+        }
+        #menu li a:hover{
+            color:rgb(248, 193, 12);
+
+        }
+
+        #titled{
+          color: darkblue;
+          font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        
+        }
+      
+
+        <!-- .container{
+          margin-top:2%;
+
+        } -->
+
+        .single-content{
+          position:relative;
+          transition: .3s;
+          box-shadow:10px 20px 20px rgb(131, 130, 131);
+        }
+
+        .single-content .text-content,.single-content:after{
+      position: absolute;
+      left: 20px;
+        right: 20px;
+       }
+
+       .single-content:after{
+         content: '';
+         display: block;
+         background-color: rgb(36, 163, 4);
+         top: 20px;
+         bottom: 20px;
+         opacity: 0;
+         transform: rotate3d(-1,1,0,100deg);
+         transition: .4s;
+       }
+
+       .single-content:hover:after{
+         opacity: .7;
+         transform: rotate3d(0,0,0,0deg);
+       }
+
+       .single-content img{
+         width: 100%;
+         height: auto;
+       }
+
+       .text-content{
+         top:45%;
+         opacity: 0;
+         z-index: 1;
+         transform: translate(10%,-30%);
+         transition: .3s;
+         text-align: center;
+         color:darkblue;
+       }
+
+       .single-content:hover .text-content{
+         opacity: 1;
+         transform: translate(0,-50%);
+         transition-delay: .3s;
+       }
+
+
+       #top_destinatio{
+         font-family:monospace
+         font-weight: bold;
+         
+       }
+    </style>
+  </head>
+  <body>
+    <!-- header -->
+    <header>
+        <img class="d-block mx-auto img-fluid" src="./media/logo.png" alt="" width="600px" height="180px">
+    </header>
+
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul id="menu" class="navbar-nav mr-auto h4">
+            <li class="nav-item active px-4">
+              <a class="nav-link" href="#">Home</span></a>
+            </li>
+
+            <li class="nav-item active px-4">
+                <a class="nav-link" href="#">About</span></a>
+              </li>
+
+              <li class="nav-item active px-4">
+                <a class="nav-link" href="#">Services</span></a>
+              </li>
+
+              <li class="nav-item active px-4">
+                <a class="nav-link" href="#">Blogs</a></span></a>
+              </li>
+
+              <li class="nav-item active px-4">
+                <a class="nav-link" href="#">Contact Us</span></a>
+              </li>
+            </ul>
+          <form class="form-inline my-2 my-lg-0 ml-4">
+            <input class="form-control mr-lg-3" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+
+
+
+      <!-- image banner slider -->
+<div id="carouselExampleIndicators" class="carousel slide mb-4" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="./media/banner-2.jpg" alt="First slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="./media/banner-1.jpg" alt="Second slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="./media/banner-3.jpg" alt="Third slide">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+</form>
+          
+<!-- location finder -->
+<div class="container">
+  <h1 id="titled" class="text-center px-4">Find Your Dream Vacation!</h1>
+</div>
+<!-- form -->
+<form class="container">
+  <div class="form-row mt-4 center-text">
+    <div class="form-group col-md-4">
+      <label for="inputCity">Country</label>
+      <input type="text" class="form-control" id="inputCountry" value="Nepal">
+    </div>
+    <div class="form-group col-md-4">
+      <label for="inputState">State</label>
+      <select id="inputState" class="form-control">
+        <option selected>Choose...</option>
+        <option>Province No. 1</option>
+        <option>Province No. 2</option>
+        <option>Bagmati</option>
+        <option>Gandaki</option>
+        <option>Province No. 5</option>
+        <option>Karnali</option>
+        <option>Sudurpachhim</option>
+      </select>
+    </div>
+    <div class="form-group col-md-3">
+      <label for="inputZip">City</label>
+      <input type="text" class="form-control mx-auto" id="inputCity" placeholder="Kathmandu">
+    </div>
+    
+  </div>
+  <div class="text-center pt-2">
+    <button type="submit" class="btn btn-success col-md-4 mb-3">Search</button>
+  </div>
+  </form>
+
+
+
+
+
+  <!-- top destination -->
+  <div class="container">
+    <h1 id="titled"  class="text-center py-4">Top Destination</h1>
+    <div class="row">
+
+      <div class="col-md-3 col-sm-6 my-4">
+       <div class="single-content">
+         <img src="https://source.unsplash.com/300x300/?nature,water" alt="">
+         <div class="text-content">
+          <h4>Bagmati Pradesh</h4>
+          <h5>Kathmandu</h5>
+         </div>
+       </div>
+      </div>
+
+      <div class="col-md-3 col-sm-6 my-4">
+       <div class="single-content">
+         <img src="https://source.unsplash.com/300x300/?nature,wate" alt="">
+         <div class="text-content">
+           <h4>Gandaki Pradesh</h4>
+           <h5>Pokhara</h5>
+         </div>
+       </div>
+      </div>
+
+      <div class="col-md-3 col-sm-6 my-4">
+        <div class="single-content">
+          <img src="https://source.unsplash.com/300x300/?nature,wate" alt="">
+          <div class="text-content">
+            <h4>Bagmati Pradesh</h4>
+            <h5>Kathmandu</h5>
+          </div>
+        </div>
+       </div>
+
+      <div class="col-md-3 col-sm-6 my-4">
+        <div class="single-content">
+          <img src="https://source.unsplash.com/300x300/?nature,wate" alt="">
+          <div class="text-content">
+            <h4>Gandaki Pradesh</h4>
+            <h5>Pokhara</h5>
+          </div>
+        </div>
+       </div>
+    </div>
+    <div class="text-center pt-3">
+      <button class="btn btn-success mb-2">Explore More Destination</button>
+    </div>
+  </div>
+
+  <!-- our_blogs -->
+  <div class="container">
+    <h1 id="titled"  class="text-center pb-4 pt-4">Our Release</h1>
+  
+
+
+  <!-- article card -->
+  <div class="row mb-2">
+    <div class="col-md-6 mt-3">
+      <div class="card flex-md-row mb-4 box-shadow h-md-250 bg-dark text-light">
+        <div class="card-body d-flex flex-column align-items-start">
+          <strong class="d-inline-block mb-2 text-success">Vlog</strong>
+          <h3 class="mb-0">
+            <a class="text-warning" href="#">3 Days Trip to Bandipur</a>
+          </h3>
+          <div class="mb-1 text-danger">Nov 12</div>
+          <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+          <a  href="#">Continue reading</a>
+        </div>
+        <img class="card-img-right flex-auto d-none d-md-block"  alt="Thumbnail [200x250]" src="./media/thumbnail1.jpg" data-holder-rendered="true" style="width: 200px; height: 250px;">
+      </div>
+    </div>
+    <div class="col-md-6 mt-3">
+      <div class="card flex-md-row mb-4 box-shadow h-md-250 bg-dark text-light">
+        <div class="card-body d-flex flex-column align-items-start">
+          <strong class="d-inline-block mb-2 text-success">Destination</strong>
+          <h3 class="mb-0">
+            <a class="text-warning" href="#">Explore Nagarkot</a>
+          </h3>
+          <div class="mb-1 text-danger">Nov 11</div>
+          <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+          <a  href="#">Continue reading</a>
+        </div>
+        <img class="card-img-right flex-auto d-none d-md-block"  alt="Thumbnail [200x250]" src="./media/thumbnail2.jpg" data-holder-rendered="true" style="width: 200px; height: 250px;">
+      </div>
+    </div>
+  </div>
+  <div class="text-center pt-2">
+    <button class="btn btn-success mb-2">Read More</button>
+  </div>
+</div>
+
+
+
+<hr>
+
+
+<!-- footer -->
+<footer class="container pb-5">
+  <div class="row">
+    <div class="col-12 col-md">
+     <img src="./media/logo.png" alt="" width="200px" height="70px">
+      <small class="d-block mb-3 text-muted text-center">© 2017-2018</small>
+    </div>
+    <div class="col-6 col-md">
+      <h5>Services</h5>
+      <ul class="list-unstyled text-small">
+        <li><a class="text-muted" href="#">Trekking</a></li>
+        <li><a class="text-muted" href="#">Holiday Package</a></li>
+        <li><a class="text-muted" href="#">Weekend Holiday</a></li>
+        <li><a class="text-muted" href="#">Destination</a></li>
+       
+      </ul>
+    </div>
+
+
+    <div class="col-6 col-md">
+      <h5>Contact Us</h5>
+      <ul class="list-unstyled text-small">
+        <li><a class="text-muted" href="#">Contact Form</a></li>
+        <li><a class="text-muted" href="#">Mail Us</a></li>
+        <li><a class="text-muted" href="#">Facebook</a></li>
+        <li><a class="text-muted" href="#">Instagram</a></li>
+      </ul>
+    </div>
+
+
+    <div class="col-6 col-md">
+      <h5>Resources</h5>
+      <ul class="list-unstyled text-small">
+        <li><a class="text-muted" href="#">Blogs</a></li>
+        <li><a class="text-muted" href="#">Travel Vlogs</a></li>
+        <li><a class="text-muted" href="#">Food & Culture</a></li>
+        <li><a class="text-muted" href="#">Privacy Plicy</a></li>
+      </ul>
+    </div>
+    
+    
+  </div>
+  <div class="copyright text-center pt-1">Traveldoo Pvt. Ltd.,Nepal 	&copy; <strong>SaphalTech - <a>Saphal Khanal</a></strong></div>
+</footer>
+
+ 
+
+    <!-- Optional JavaScript -->
+   
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
